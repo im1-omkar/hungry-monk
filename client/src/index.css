@@ -1,0 +1,61 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&display=swap');
+@import "tailwindcss";
+
+
+/* Custom font usage */
+.oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Optional: set it globally for headings */
+h1, h2, h3 {
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Optional: give some variants */
+.oswald-bold {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Optional: make it global */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Optional: define variants */
+.roboto-light {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.roboto-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+/*add the oreganot here*/
+
+.oregano {
+  font-family: 'Oregano', cursive;
+}
+
+/* Optional: make it global for headings */
+h1, h2, h3 {
+  font-family: 'Oregano', cursive;
+}
+
+/* Optional: define an italic variant (since Oregano supports italics) */
+.oregano-italic {
+  font-family: 'Oregano', cursive;
+  font-style: italic;
+}
+
