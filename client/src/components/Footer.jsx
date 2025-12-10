@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import mushroomImg from '../assets/mushroom.png';
 import breadImg from '../assets/bread.png';
 
-export default function FooterSection() {
+export default function FooterSection({ onSubscribe, subscribeStatus }) {
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubscribe?.(email);
+  };
+
   return (
     <footer className="relative bg-[#f9fafb] text-gray-800 pt-20 pb-10 overflow-hidden">
-      {/* Floating decorative images (served from public /images folder) */}
+
       <img src={mushroomImg} alt="mushroom" className="absolute left-0 bottom-0 w-40 opacity-80 animate-float-slow" />
       <img src={breadImg} alt="pizza slice" className="absolute right-0 top-0 w-44 opacity-80 animate-float-slow float-delay" />
 
@@ -22,10 +29,10 @@ export default function FooterSection() {
         <div>
           <h3 className="text-lg font-bold mb-3 border-b-4 border-yellow-400 inline-block pb-1">About</h3>
           <ul className="space-y-2 text-sm">
-            <li>Our Story</li>
-            <li>Special Dishes</li>
-            <li>Reservation</li>
-            <li>Contact Us</li>
+            <li><a href="#about" className="hover:text-yellow-600 transition">Our Story</a></li>
+            <li><a href="#menu" className="hover:text-yellow-600 transition">Special Dishes</a></li>
+            <li><a href="#contact" className="hover:text-yellow-600 transition">Reservation</a></li>
+            <li><a href="#contact" className="hover:text-yellow-600 transition">Contact Us</a></li>
           </ul>
         </div>
 
@@ -44,22 +51,28 @@ export default function FooterSection() {
         {/* Newsletter */}
         <div>
           <h3 className="text-lg font-bold mb-3 border-b-4 border-yellow-400 inline-block pb-1">Newsletter</h3>
-          <p className="text-sm mb-3">Get recent news and updates.</p>
+          <p className="text-sm mb-3">Get recent updates and offers.</p>
 
-          {/* Fixed aligned input + button: single control with proper centering */}
-          <div className="w-full flex items-start">
+          <form onSubmit={handleSubmit} className="w-full flex items-start">
             <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden w-full">
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email Address"
                 className="flex-1 px-4 py-3 text-sm focus:outline-none"
                 aria-label="Email address"
               />
-              <button className="bg-[#e53945] text-white px-5 py-3 text-sm hover:bg-red-600 transition-all">
+              <button type="submit" className="bg-[#e53945] text-white px-5 py-3 text-sm hover:bg-red-600 transition-all">
                 Subscribe
               </button>
             </div>
-          </div>
+          </form>
+          {subscribeStatus?.message && (
+            <p className={`mt-2 text-sm ${subscribeStatus.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+              {subscribeStatus.message}
+            </p>
+          )}
         </div>
       </div>
 
@@ -73,7 +86,7 @@ export default function FooterSection() {
         </div>
       </div>
 
-      {/* Floating animation style (plain <style> – works in CRA/Next without styled-jsx) */}
+
       <style>{`
         @keyframes floatSlow {
           0%, 100% { transform: translateY(0px); }

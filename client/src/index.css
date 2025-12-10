@@ -4,13 +4,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&display=swap');
 @import "tailwindcss";
 
-
 /* Custom font usage */
 .oswald {
   font-family: 'Oswald', sans-serif;
 }
 
-/* Optional: set it globally for headings */
+/* Global heading font */
 h1, h2, h3 {
   font-family: 'Oswald', sans-serif;
 }
@@ -45,11 +44,6 @@ body {
 /*add the oreganot here*/
 
 .oregano {
-  font-family: 'Oregano', cursive;
-}
-
-/* Optional: make it global for headings */
-h1, h2, h3 {
   font-family: 'Oregano', cursive;
 }
 

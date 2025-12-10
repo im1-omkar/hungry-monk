@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Feature() {
+export default function Feature({ onOrderClick }) {
   const cards = [
     {
       id: 1,
@@ -96,7 +96,8 @@ export default function Feature() {
 
                 {/* Button */}
                 <button
-                  className={`$${
+                  onClick={onOrderClick}
+                  className={`${
                     card.buttonBg || 'bg-transparent border-2 border-white'
                   } ${
                     card.buttonTextColor || 'text-white'

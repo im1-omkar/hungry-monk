@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import video from "../assets/video.mp4"
+import video from "../assets/video2.mp4";
 
 export default function VideoSection() {
   const videoRef = useRef(null);
@@ -28,7 +28,7 @@ export default function VideoSection() {
   }, []);
 
   return (
-    <section className="relative w-full h-screen flex justify-center items-center overflow-hidden bg-black">
+    <section id="video" className="relative w-full h-screen flex justify-center items-center overflow-hidden bg-black">
       {/* Background video */}
       <video
         ref={videoRef}
