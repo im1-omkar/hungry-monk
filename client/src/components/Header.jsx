@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
 import Navbar from './NavBar.jsx';
-import brandIcon from '../assets/hungry_monk_logo-removebg-preview.png';
+import logo from '../assets/final_logo_.png';
 import ContactButton from './ContactButton.jsx';
 
 const Header = ({ cartCount = 0, onContactClick, onNavigate }) => {
@@ -23,7 +23,7 @@ const Header = ({ cartCount = 0, onContactClick, onNavigate }) => {
   return (
     <header className="w-full py-4 px-6 flex flex-row items-center justify-between bg-black/60 backdrop-blur-sm fixed top-0 left-0 z-20">
       <div className="flex items-center gap-3">
-        <img src={brandIcon} alt="Hungry Monk logo" className="h-12 w-12 object-contain" />
+        <img src={logo} alt="Hungry Monk logo" className="h-20 w-auto" />
         <span className="text-white font-bold text-lg oswald">Hungry Monk</span>
       </div>
       <div className="hidden md:block flex-1 mx-6">
